@@ -386,6 +386,7 @@ static BOOL wasSetupFromFile = NO;
     }
 
     if (isAppsflyerIntegrationEnabled) {
+      [[AppsFlyerLib shared] waitForATTUserAuthorizationWithTimeoutInterval:60];
       [configuration use:[SEGAppsFlyerIntegrationFactory instance]];
     }
 
